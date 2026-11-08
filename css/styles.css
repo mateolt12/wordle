@@ -1,0 +1,117 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #20233a;
+  background: #f6f7fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 280px;
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  padding: clamp(20px, 5vh, 32px) clamp(12px, 4vw, 16px);
+}
+
+.game {
+  width: min(100%, 440px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.game__header {
+  text-align: center;
+}
+
+.game__eyebrow {
+  margin: 0 0 8px;
+  color: #72778f;
+  font-size: clamp(0.65rem, 3vw, 0.75rem);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  color: #20233a;
+  font-size: clamp(2.25rem, 10vw, 3.5rem);
+  font-weight: 850;
+  letter-spacing: clamp(0.08em, 2vw, 0.14em);
+  line-height: 1;
+}
+
+.game__subtitle {
+  margin: 12px 0 0;
+  color: #72778f;
+  font-size: clamp(0.85rem, 3.5vw, 0.95rem);
+}
+
+.board {
+  width: min(100%, 340px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(5px, 2vw, 8px);
+}
+
+.board__row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(5px, 2vw, 8px);
+}
+
+.tile {
+  width: 100%;
+  min-width: 0;
+  aspect-ratio: 1;
+  padding: 0;
+  border: 2px solid #d9dce7;
+  border-radius: 10px;
+  background: #fff;
+  color: #20233a;
+  font-size: clamp(1.35rem, 7vw, 2rem);
+  font-weight: 750;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+  transition: border-color 150ms ease, background-color 150ms ease, color 150ms ease;
+}
+
+.tile:focus,
+.tile:focus-visible {
+  border-color: #d9dce7;
+  outline: none;
+  box-shadow: none;
+}
+
+@media (max-width: 380px) {
+  .game {
+    gap: 24px;
+  }
+
+  .tile {
+    border-radius: 8px;
+  }
+}
+
+@media (max-height: 560px) {
+  body {
+    align-items: start;
+  }
+
+  .game {
+    gap: 20px;
+  }
+}
