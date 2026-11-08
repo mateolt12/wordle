@@ -12,11 +12,7 @@ let gameFinished = false;
 
 export async function initializeGame() {
     renderBoard(TOTAL_ATTEMPTS, WORD_LENGTH);
-    // const game = new Game();
     generatedWord = await getGeneratedWord();
-    // game.start();
-    console.log("El juego ha comenzado");
-    console.log("La palabra es:", generatedWord);
 }
 
 export function handleKeyPress(event) {
